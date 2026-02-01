@@ -1,0 +1,51 @@
+# Python
+
+**pycache**/
+_.pyc
+_.pyo
+_.pyd
+_.egg-info/
+dist/
+build/
+
+# Virtual environments
+
+venv/
+.env/
+
+# Jupyter
+
+.ipynb_checkpoints/
+
+# Data outputs
+
+data/processed/_.csv
+data/processed/_.parquet
+
+# OS
+
+.DS_Store
+Thumbs.db
+
+# IDE
+
+.vscode/
+.idea/
+
+# Logs
+
+\*.log
+
+# Streamlit cache
+
+.streamlit/
+
+# Models
+
+models/_.pkl
+models/_.joblib
+
+# Reports temp
+
+reports/figures/_.png
+reports/figures/_.jpg

@@ -1,0 +1,21 @@
+id,record_type,indicator,indicator_code,value_numeric,observation_date,parent_id,related_indicator,impact_direction,impact_magnitude
+1,observation,Account Ownership,ACC_OWNERSHIP,14.0,2011-12-31,,,,
+2,observation,Account Ownership,ACC_OWNERSHIP,22.0,2014-12-31,,,,
+3,observation,Account Ownership,ACC_OWNERSHIP,35.0,2017-12-31,,,,
+4,observation,Account Ownership,ACC_OWNERSHIP,46.0,2021-12-31,,,,
+5,observation,Account Ownership,ACC_OWNERSHIP,49.0,2024-12-31,,,,
+6,observation,Mobile Money Account,ACC_MM_ACCOUNT,4.7,2021-12-31,,,,
+7,observation,Mobile Money Account,ACC_MM_ACCOUNT,9.45,2024-12-31,,,,
+8,observation,Digital Payment Usage,USG_DIGITAL_PAYMENT,31.0,2021-12-31,,,,
+9,observation,Digital Payment Usage,USG_DIGITAL_PAYMENT,35.0,2024-12-31,,,,
+10,observation,ATM Density,INF_ATM_PER_100K,2.8,2024-06-30,,,,
+11,event,Telebirr Launch,,,2021-05-11,,,,
+12,event,M-Pesa Entry,,,2023-08-15,,,,
+13,event,Interoperability Launch,,,2022-03-01,,,,
+14,event,NFIS-II Announcement,,,2022-01-01,,,,
+15,event,CBDC Exploration,,,2023-10-01,,,,
+16,impact_link,Telebirr Impact,,,2021-05-11,1.0,ACC_MM_ACCOUNT,positive,high
+17,impact_link,Telebirr Impact,,,2021-05-11,1.0,USG_DIGITAL_PAYMENT,positive,medium
+18,impact_link,M-Pesa Impact,,,2023-08-15,2.0,USG_DIGITAL_PAYMENT,positive,low
+19,impact_link,Interoperability Impact,,,2022-03-01,3.0,USG_DIGITAL_PAYMENT,positive,medium
+20,impact_link,NFIS-II Impact,,,2022-01-01,4.0,ACC_OWNERSHIP,positive,high

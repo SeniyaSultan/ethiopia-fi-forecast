@@ -1,0 +1,26 @@
+field_name,code,description
+record_type,observation,Measured values from surveys or reports
+record_type,event,"Policy changes, product launches, milestones"
+record_type,impact_link,Modeled relationship between events and indicators
+record_type,target,Official policy targets
+pillar,Access,Access to financial services
+pillar,Usage,Usage of financial services
+pillar,Infrastructure,Infrastructure enabling financial services
+source_type,survey,"Survey-based data (e.g., Findex)"
+source_type,supply_side,"Supply-side data (e.g., operator reports)"
+source_type,policy,Policy documents and announcements
+source_type,modeled,Modeled or estimated values
+source_type,target,Official targets
+confidence,high,High confidence in data accuracy
+confidence,medium,Medium confidence in data accuracy
+confidence,low,Low confidence in data accuracy
+frequency,annual,Annual frequency
+frequency,quarterly,Quarterly frequency
+frequency,monthly,Monthly frequency
+impact_direction,positive,Positive impact on indicator
+impact_direction,negative,Negative impact on indicator
+impact_magnitude,very_high,Very high magnitude impact
+impact_magnitude,high,High magnitude impact
+impact_magnitude,medium,Medium magnitude impact
+impact_magnitude,low,Low magnitude impact
+impact_magnitude,very_low,Very low magnitude impact

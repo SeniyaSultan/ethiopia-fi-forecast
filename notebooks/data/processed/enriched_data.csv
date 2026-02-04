@@ -1,0 +1,58 @@
+id,record_type,pillar,indicator,indicator_code,value_numeric,observation_date,frequency,source_type,source_name,confidence,parent_id,related_indicator,impact_direction,impact_magnitude,lag_months
+1,observation,Access,Account Ownership,ACC_OWNERSHIP,14.0,2011-12-31,annual,survey,World Bank Findex,high,,,,,
+2,observation,Access,Account Ownership,ACC_OWNERSHIP,22.0,2014-12-31,annual,survey,World Bank Findex,high,,,,,
+3,observation,Access,Account Ownership,ACC_OWNERSHIP,35.0,2017-12-31,annual,survey,World Bank Findex,high,,,,,
+4,observation,Access,Account Ownership,ACC_OWNERSHIP,46.0,2021-12-31,annual,survey,World Bank Findex,high,,,,,
+5,observation,Access,Account Ownership,ACC_OWNERSHIP,49.0,2024-12-31,annual,survey,World Bank Findex,high,,,,,
+6,observation,Access,Mobile Money Account,ACC_MM_ACCOUNT,1.5,2014-12-31,annual,survey,World Bank Findex,high,,,,,
+7,observation,Access,Mobile Money Account,ACC_MM_ACCOUNT,4.7,2021-12-31,annual,survey,World Bank Findex,high,,,,,
+8,observation,Access,Mobile Money Account,ACC_MM_ACCOUNT,7.2,2023-06-30,annual,survey,World Bank Findex,high,,,,,
+9,observation,Access,Mobile Money Account,ACC_MM_ACCOUNT,9.45,2024-12-31,annual,survey,World Bank Findex,high,,,,,
+10,observation,Access,Digital Payment Usage,USG_DIGITAL_PAYMENT,12.0,2014-12-31,annual,survey,World Bank Findex,high,,,,,
+11,observation,Access,Digital Payment Usage,USG_DIGITAL_PAYMENT,24.0,2021-12-31,annual,survey,World Bank Findex,high,,,,,
+12,observation,Access,Digital Payment Usage,USG_DIGITAL_PAYMENT,31.0,2023-06-30,annual,survey,World Bank Findex,high,,,,,
+13,observation,Access,Digital Payment Usage,USG_DIGITAL_PAYMENT,35.0,2024-12-31,annual,survey,World Bank Findex,high,,,,,
+14,observation,Access,ATM Density,INF_ATM_PER_100K,1.2,2017-12-31,annual,supply_side,NBE,high,,,,,
+15,observation,Access,ATM Density,INF_ATM_PER_100K,2.1,2021-12-31,annual,supply_side,NBE,high,,,,,
+16,observation,Usage,ATM Density,INF_ATM_PER_100K,2.8,2024-06-30,annual,supply_side,NBE,high,,,,,
+17,observation,Usage,Agent Density,INF_AGENT_PER_100K,15.0,2017-12-31,annual,supply_side,NBE,high,,,,,
+18,observation,Usage,Agent Density,INF_AGENT_PER_100K,28.0,2021-12-31,annual,supply_side,NBE,high,,,,,
+19,observation,Usage,Agent Density,INF_AGENT_PER_100K,42.0,2024-06-30,annual,supply_side,NBE,high,,,,,
+20,observation,Usage,Smartphone Penetration,ENB_SMARTPHONE,8.0,2017-12-31,annual,supply_side,GSMA,high,,,,,
+21,observation,Usage,Smartphone Penetration,ENB_SMARTPHONE,15.0,2021-12-31,annual,supply_side,GSMA,high,,,,,
+22,observation,Usage,Smartphone Penetration,ENB_SMARTPHONE,22.0,2024-06-30,annual,supply_side,GSMA,high,,,,,
+23,observation,Usage,4G Coverage,ENB_4G_COVERAGE,25.0,2017-12-31,annual,supply_side,GSMA,high,,,,,
+24,observation,Usage,4G Coverage,ENB_4G_COVERAGE,45.0,2021-12-31,annual,supply_side,GSMA,high,,,,,
+25,observation,Usage,4G Coverage,ENB_4G_COVERAGE,62.0,2024-06-30,annual,supply_side,GSMA,high,,,,,
+26,observation,Usage,Mobile Internet,ENB_MOBILE_INTERNET,18.0,2017-12-31,annual,supply_side,ITU,high,,,,,
+27,observation,Usage,Mobile Internet,ENB_MOBILE_INTERNET,32.0,2021-12-31,annual,supply_side,ITU,high,,,,,
+28,observation,Usage,Mobile Internet,ENB_MOBILE_INTERNET,48.0,2024-06-30,annual,supply_side,ITU,high,,,,,
+29,observation,Usage,Account for Wages,USG_ACC_WAGES,8.0,2021-12-31,annual,supply_side,ITU,high,,,,,
+30,observation,Usage,Account for Wages,USG_ACC_WAGES,15.0,2024-12-31,annual,supply_side,ITU,high,,,,,
+31,event,,Telebirr Launch,,,2021-05-11,,policy,Policy,high,,,,,
+32,event,,M-Pesa Entry,,,2023-08-15,,policy,Policy,high,,,,,
+33,event,,Interoperability Launch,,,2022-03-01,,policy,Policy,high,,,,,
+34,event,,NFIS-II Announcement,,,2022-01-01,,policy,Policy,high,,,,,
+35,event,,CBDC Exploration,,,2023-10-01,,policy,Policy,high,,,,,
+36,event,,Safaricom License,,,2022-08-30,,policy,Policy,high,,,,,
+37,event,,EthSwitch Upgrade,,,2023-01-15,,policy,Policy,high,,,,,
+38,event,,Digital ID Pilot,,,2024-03-01,,policy,Policy,high,,,,,
+39,event,,Agent Network Expansion,,,2023-06-01,,policy,Policy,high,,,,,
+40,event,,QR Code Standardization,,,2024-01-01,,policy,Policy,high,,,,,
+41,impact_link,Access,Telebirr Impact MM,,,2021-05-11,,modeled,Model,medium,31.0,ACC_MM_ACCOUNT,positive,high,0.0
+42,impact_link,Access,Telebirr Impact DP,,,2021-05-11,,modeled,Model,medium,31.0,USG_DIGITAL_PAYMENT,positive,medium,3.0
+43,impact_link,Access,M-Pesa Impact,,,2023-08-15,,modeled,Model,medium,32.0,USG_DIGITAL_PAYMENT,positive,low,1.0
+44,impact_link,Access,Interoperability Impact,,,2022-03-01,,modeled,Model,medium,33.0,USG_DIGITAL_PAYMENT,positive,medium,6.0
+45,impact_link,Access,NFIS-II Impact,,,2022-01-01,,modeled,Model,medium,34.0,ACC_OWNERSHIP,positive,high,12.0
+46,impact_link,Access,CBDC Impact,,,2023-10-01,,modeled,Model,medium,35.0,USG_DIGITAL_PAYMENT,positive,low,18.0
+47,impact_link,Access,4G Impact,,,2017-12-31,,modeled,Model,medium,21.0,USG_DIGITAL_PAYMENT,positive,medium,24.0
+48,impact_link,Usage,Smartphone Impact,,,2017-12-31,,modeled,Model,medium,19.0,USG_DIGITAL_PAYMENT,positive,medium,18.0
+49,impact_link,Usage,Agent Impact,,,2017-12-31,,modeled,Model,medium,17.0,ACC_OWNERSHIP,positive,medium,12.0
+50,impact_link,Usage,ATM Impact,,,2017-12-31,,modeled,Model,medium,15.0,ACC_OWNERSHIP,positive,low,12.0
+51,impact_link,Usage,Digital ID Impact,,,2024-03-01,,modeled,Model,medium,38.0,ACC_OWNERSHIP,positive,high,6.0
+52,impact_link,Usage,QR Impact,,,2024-01-01,,modeled,Model,medium,40.0,USG_DIGITAL_PAYMENT,positive,medium,3.0
+53,impact_link,Usage,Safaricom Impact,,,2022-08-30,,modeled,Model,medium,36.0,ACC_OWNERSHIP,positive,medium,0.0
+54,impact_link,Usage,Policy Impact,,,2022-01-01,,modeled,Model,medium,34.0,ACC_OWNERSHIP,positive,high,6.0
+55,target,Access,NFIS-II Target 2027,,60.0,2027-12-31,,target,NFIS-II,high,,,,,
+56,target,Access,Digital Payment Target 2027,,50.0,2027-12-31,,target,NFIS-II,high,,,,,
+57,target,Access,Mobile Money Target 2027,,25.0,2027-12-31,,target,NFIS-II,high,,,,,

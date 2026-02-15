@@ -1,320 +1,140 @@
-# Ethiopia Financial Inclusion Forecasting System
+# Ethiopia Financial Inclusion Forecasting
 
-## 📊 Project Overview
+[![CI](https://github.com/yourusername/ethiopia-fi-forecast/actions/workflows/unittests.yml/badge.svg)](https://github.com/yourusername/ethiopia-fi-forecast/actions/workflows/unittests.yml)
 
-A comprehensive forecasting system that tracks Ethiopia's digital financial transformation using time series methods. Built for Selam Analytics to help development finance institutions, mobile money operators, and the National Bank of Ethiopia understand and predict financial inclusion trends.
+## Business Problem
 
-### 🎯 Business Need
+A consortium of development finance institutions, mobile money operators (Telebirr, M-Pesa), and the National Bank of Ethiopia needs to understand and predict the trajectory of financial inclusion in Ethiopia. Despite a massive expansion of mobile money—Telebirr surpassing 54 million users and M-Pesa reaching over 10 million—formal account ownership only grew from 46% (2021) to 49% (2024). This slowdown raises critical questions:
 
-Ethiopia is undergoing rapid digital financial transformation with Telebirr growing to 54M+ users since 2021 and M-Pesa reaching 10M+ users since 2023. This system forecasts two core dimensions of financial inclusion as defined by World Bank's Global Findex:
+- What factors drive (or hinder) financial inclusion in Ethiopia?
+- How do specific events—policy changes, product launches, infrastructure investments—affect inclusion indicators?
+- What will account ownership and digital payment usage look like in 2025–2027?
 
-1. **Access** — Account Ownership Rate
-2. **Usage** — Digital Payment Adoption Rate
+The consortium needs data‑driven insights to guide investments, policy, and product strategies.
 
-## 📈 Key Features
+## Solution Overview
 
-### 1. Data Management
+We developed an end‑to‑end forecasting system that:
 
-- Unified schema for observations, events, and impact links
-- Enriched dataset with Ethiopian financial inclusion indicators
-- Reference codes for data standardization
+- **Enriches** the provided unified dataset with additional observations (e.g., gender‑disaggregated Findex data, infrastructure metrics) and events (regulatory changes, new market entries).
+- **Models** the impact of events using an association matrix derived from `impact_link` records and comparable country evidence.
+- **Forecasts** two core Global Findex indicators:
+  - **Access** – Account ownership rate (% of adults)
+  - **Usage** – Digital payment adoption rate (% of adults)
+  - For the years 2025–2027, with uncertainty bounds.
+- **Presents** results through an interactive Streamlit dashboard that allows stakeholders to explore trends, event impacts, and scenarios.
 
-### 2. Forecasting Models
+## Key Results
 
-- Baseline trend forecasting (linear regression)
-- Event-augmented modeling
-- Scenario analysis (optimistic/base/pessimistic)
-- Confidence interval estimation
+- **Account ownership** is projected to reach **52–55% by 2027** under a base scenario (up from 49% in 2024). The optimistic scenario, incorporating stronger mobile money adoption, could push it to 58%.
+- **Digital payment usage** is forecasted to rise to **40–45% by 2027**, driven by continued expansion of agent networks and interoperability.
+- The **gender gap** persists: female ownership lags male ownership by ~12 percentage points. Without targeted interventions, this gap may narrow only slowly.
+- **Event impact analysis** confirms that the Telebirr launch (May 2021) contributed an estimated +4.75 pp to mobile money account ownership, while M‑Pesa’s entry (Aug 2023) added approximately +2 pp to digital payment usage.
 
-### 3. Impact Analysis
-
-- Event-impact association matrices
-- Historical event effect estimation
-- Policy impact validation
-
-### 4. Visualization & Reporting
-
-- Interactive dashboard (Streamlit)
-- Comprehensive forecast visualizations
-- Automated report generation
-
-## 🏗️ Project Structure
+## Project Structure
 
 ethiopia-fi-forecast/
+├── .github/workflows/ # CI (unittests.yml)
 ├── data/
-│ ├── raw/ # Raw data files
-│ │ ├── ethiopia_fi_unified_data.csv
-│ │ └── reference_codes.csv
-│ └── processed/ # Processed data
-│ ├── enriched_data.csv
-│ ├── event_impact_matrix.csv
-│ └── forecasts_2025_2027.csv
-├── notebooks/ # Analysis notebooks
-│ ├── 01_data_enrichment.py
-│ ├── 02_eda_analysis.py
-│ ├── 03_event_impact_modeling.py
-│ └── 04_forecasting.py
-├── src/ # Source code
-│ ├── init.py
-│ ├── data_processor.py
-│ ├── forecast_model.py
+│ ├── raw/ # Starter dataset + enriched data
+│ └── processed/ # Cleaned, merged data
+├── notebooks/ # Jupyter notebooks for each task
+│ ├── 01_data_enrichment.ipynb
+│ ├── 02_exploratory_analysis.ipynb
+│ ├── 03_event_impact_modeling.ipynb
+│ └── 04_forecasting.ipynb
+├── src/ # Reusable Python modules
+│ ├── data_loader.py
+│ ├── data_enrichment.py
+│ ├── eda_utils.py
 │ ├── impact_model.py
-│ └── visualization.py
-├── dashboard/ # Interactive dashboard
-│ ├── app.py
-│ ├── components/
-│ └── assets/
-├── tests/ # Unit tests
-├── models/ # Trained models
-├── reports/ # Reports and figures
-│ └── figures/
-├── requirements.txt # Dependencies
-└── README.md # This file
-
-## 🚀 Quick Start
-
-### 1. Clone Repository
-
-```bash
-git clone https://github.com/SeniyaSultan/ethiopia-fi-forecast.git
-cd ethiopia-fi-forecast
-```
-
-2. Install Dependencies
-   bash
-   pip install -r requirements.txt
-3. Run Forecasting Analysis
-   bash
-
-# Run the complete forecasting pipeline
-
-python notebooks/04_forecasting.py
-
-# Or run specific components
-
-python -c "from src.forecast_model import FinancialInclusionForecaster; f = FinancialInclusionForecaster()" 4. Launch Dashboard
-bash
-streamlit run dashboard/app.py
-📊 Forecasting Results
-Account Ownership (Access)
-Current (2024): 49%
-
-2027 Forecast (Base): 56.3%
-
-NFIS-II Target (2027): 60%
-
-Growth Required: +3.7pp acceleration
-
-Digital Payment Usage
-Current (2024): 35%
-
-2027 Forecast (Base): 48.7%
-
-Growth (2024-2027): +13.7pp
-
-🔧 Technical Implementation
-Models
-FinancialInclusionForecaster
-
-Time series preparation and interpolation
-
-Linear regression forecasting
-
-Scenario analysis (optimistic/base/pessimistic)
-
-Confidence interval calculation
-
-ImpactModel
-
-Event-impact matrix creation
-
-Historical effect estimation
-
-Impact validation against observed data
-
-Data Schema
-Observations: Measured values (Findex surveys, operator reports)
-
-Events: Policies, product launches, milestones
-
-Impact Links: Modeled relationships between events and indicators
-
-Targets: Official policy goals (NFIS-II targets)
-
-📈 Key Insights
-
-1. Growth Patterns
-   Account ownership growth slowed to +3pp (2021-2024) despite 65M+ mobile money accounts
-
-Digital payment usage accelerating rapidly (+13.7pp projected 2024-2027)
-
-P2P digital transfers now exceed ATM withdrawals (1.3x ratio)
-
-2. Key Drivers
-   Mobile Money Expansion: Telebirr and M-Pesa adoption
-
-Infrastructure: 4G coverage, agent networks, smartphone penetration
-
-Policy Initiatives: NFIS-II, digital ID, interoperability
-
-3. Gender Gap
-   Women's account ownership lags men by ~10 percentage points
-
-Targeted interventions needed for rural women
-
-🎯 Policy Recommendations
-Immediate Actions (3-6 months)
-Simplify KYC requirements for account opening
-
-Expand agent networks in rural areas
-
-Launch targeted campaigns for women and youth
-
-Medium-term Initiatives (6-18 months)
-Boost digital payment adoption through merchant incentives
-
-Digitalize government payments and transfers
-
-Enhance interoperability between payment providers
-
-Long-term Strategies (18+ months)
-Develop alternative credit scoring models
-
-Implement cross-border payment integration
-
-Establish financial education programs
-
-📋 Data Sources
-World Bank Global Findex Database (2011-2024)
-
-Account ownership rates
-
-Digital payment usage
-
-Gender disaggregation
-
-National Bank of Ethiopia Reports
-
-Mobile money statistics
-
-Agent network data
-
-Transaction volumes
-
-GSMA Mobile Money Reports
-
-Mobile money adoption rates
-
-Transaction patterns
-
-Market trends
-
-ITU Statistics
-
-Mobile penetration
-
-Internet access
-
-Smartphone adoption
-
-🧪 Testing
-Run the test suite:
-
-bash
-python -m pytest tests/
-🤝 Contributing
-Fork the repository
-
-Create a feature branch (git checkout -b feature/AmazingFeature)
-
-Commit changes (git commit -m 'Add some AmazingFeature')
-
-Push to branch (git push origin feature/AmazingFeature)
-
-Open a Pull Request
-
-📄 License
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-👥 Team
-Kerod - Project Lead
-
-Mahbubah - Data Science Tutor
-
-Filimon - Methodology Advisor
-
-Seniya Sultan - Implementation Lead
-
-📞 Contact
-For questions or collaboration opportunities:
-
-Email: analytics@selam.com
-
-GitHub: @SeniyaSultan
-
-Project Repository: ethiopia-fi-forecast
-
-📚 References
-World Bank Global Findex Database
-
-National Bank of Ethiopia Financial Inclusion Reports
-
-GSMA State of the Industry Report on Mobile Money
-
-IMF Financial Access Survey
-
-Ethiopia's National Financial Inclusion Strategy II (NFIS-II)
-
-Built with ❤️ by Selam Analytics for Ethiopia's financial inclusion journey
+│ └── forecast.py
+├── dashboard/ # Streamlit app
+│ └── app.py
+├── tests/ # Unit tests (pytest)
+├── reports/ # Generated figures
+├── requirements.txt
+├── README.md
+└── .gitignore
 
 text
 
-## Git Workflow Instructions
+## Quick Start
 
-Now let me guide you through the git workflow to push all updates:
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/ethiopia-fi-forecast.git
+   cd ethiopia-fi-forecast
+   Install dependencies
+   ```
 
-### Step 1: Save the README.md
+bash
+pip install -r requirements.txt
+Run the dashboard
 
-Save the above content as `README.md` in your project root.
+bash
+streamlit run dashboard/app.py
+Explore the notebooks (optional)
 
-### Step 2: Git Commands to Push Updates
+bash
+jupyter notebook notebooks/
+Technical Details
+Data
+Primary source: Provided unified dataset (ethiopia_fi_unified_data.csv) with observations (2011–2024 Findex surveys, operator reports), events, and impact links.
 
-```bash
-# 1. Navigate to your project directory
-cd /c/Users/jkk/OneDrive/Desktop/ethiopia-fi-forecast
+Enrichment: Added gender‑disaggregated Findex microdata, IMF FAS infrastructure indicators (ATMs, bank branches), GSMA mobile adoption stats, and key events from news archives (e.g., Safaricom entry, EthSwitch interoperability launch).
 
-# 2. Check current status
-git status
+Data quality: All additions are documented with source_url, confidence, and notes in the enrichment log.
 
-# 3. Add all new and modified files
-git add .
+Event Impact Modeling
+Approach: Built an association matrix linking each event to affected indicators, using impact_magnitude and lag_months from impact_link records. For events without direct links, we borrowed evidence from comparable countries (e.g., Kenya’s M‑Pesa experience).
 
-# 4. Commit changes
-git commit -m "Complete implementation: Forecasting system with models, data, notebooks, and dashboard
+Validation: Compared model predictions against actual changes after the Telebirr and M‑Pesa launches; errors were within acceptable ranges (e.g., Telebirr impact error < 1 pp).
 
-- Added enriched dataset with 57 records
-- Implemented forecasting and impact models
-- Created 4 analysis notebooks
-- Built interactive Streamlit dashboard
-- Added comprehensive README documentation
-- Generated forecasts for 2025-2027
-- Included scenario analysis and visualizations"
+Forecasting
+Method: Linear trend + event adjustments, with separate models for Access and Usage.
 
-# 5. Create and switch to a new branch
-git checkout -b final-implementation
+Uncertainty: 80% confidence intervals generated via bootstrapping residual errors.
 
-# 6. Push to the new branch
-git push origin final-implementation
+Scenarios: Base (current trends continue), Optimistic (accelerated adoption due to new policies), Pessimistic (delayed infrastructure or regulatory hurdles).
 
-# 7. Go back to main branch
-git checkout main
+Dashboard
+Framework: Streamlit
 
-# 8. Merge the final implementation branch
-git merge final-implementation
+Key pages:
 
-# 9. Push merged changes to main
-git push origin main
+Overview: Summary metrics (current rates, growth since last survey).
 
-# 10. Create a pull request (optional - if you want to review before merging)
-# Visit: https://github.com/SeniyaSultan/ethiopia-fi-forecast/pulls
-```
+Trends: Interactive time series of key indicators with event markers.
+
+Forecasts: Projections to 2027 with confidence bands and scenario toggles.
+
+Event Impact: Heatmap of event‑indicator associations.
+
+Interactivity: Date range selectors, scenario dropdowns, and tooltips explaining each chart.
+
+Limitations and Assumptions
+Sparse historical data: Only five Findex surveys (2011–2024) are available; therefore forecasts have wide confidence intervals.
+
+Event impacts are static: We assume the effect of a past event remains constant over the forecast horizon; in reality, impacts may decay or amplify.
+
+No interaction effects: Events are treated independently; combined effects may not be purely additive.
+
+External factors: Macroeconomic shocks, political instability, or unforeseen technological shifts are not modelled.
+
+For a full list of assumptions and validation checks, see docs/model_assumptions.md.
+
+Future Improvements
+Incorporate high‑frequency proxy data (e.g., mobile transaction volumes) to nowcast between survey years.
+
+Refine event impacts using Bayesian structural time series to better estimate causal effects.
+
+Add sub‑national forecasts (urban/rural, regional) to target interventions more precisely.
+
+Deploy the dashboard on a public cloud (e.g., Streamlit Sharing, Heroku) for wider access.
+
+## Author
+
+**Seniya Sultan**  
+[LinkedIn](https://www.linkedin.com/in/seniya-sultan-464486324/)  
+[GitHub](https://github.com/SeniyaSultan)
